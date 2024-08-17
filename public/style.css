@@ -1,0 +1,37 @@
+body {
+    background-image: url("../static/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0; /* remove default margin */
+}
+
+#listenvid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px; /* specific width */
+    height: auto; /* auto height */
+}
+
+#start-listening {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+
+.clickable-text:hover {
+    color: lightblue;
+}
+#transcription{
+    display: none;
+}

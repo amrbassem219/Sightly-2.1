@@ -1,0 +1,181 @@
+body{
+  background-image: url("static/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.chat-container {
+  position: absolute;
+  left: 45%;
+  bottom: 6%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 45px;
+
+}
+
+.chatbox {
+border-style: none;
+background-color: #e0e0e0;
+border-radius: 70px;
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-left: 60px;
+opacity: 1;
+margin: 0 auto;
+}
+
+.chatbox input[type="text"] {
+  width: 80%;
+  height: 30px;
+  padding: 5px;
+  padding-left: 15p;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #e0e0e0;
+  color: #0f1815;
+  font-family: "Ubuntu", sans-serif;
+
+}
+
+
+.chatbox button[type="submit"] {
+  width: 45PX;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  font-size: 0;
+  margin-right: 10px;
+}
+
+#submitbtn{
+  background-image: url(../static/arrow.png);
+  background-size: 100% 100%;
+  margin-left: 450px;
+  position: absolute;
+  bottom:-10px;
+  right: 8px;
+
+}
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.chatbox input[type="text"] {
+  width: 70%; /* reduce the width to make room for the button */
+  height: 30px;
+  padding: 5px;
+  padding-left: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #0f1815;
+  background-color: #e0e0e0;
+  font-family: "Ubuntu", sans-serif;
+}
+.image-upload-btn{
+  padding: left;
+  font-size: 0;
+  margin-left: -30px;
+
+}
+#imginbtn{
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+#image-upload{
+  display: none;
+}
+.circle-btn {
+  position: absolute;
+  right: -70px; /* adjust the value to position the button correctly */
+  bottom: -20px;
+
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #e0e0e0;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+
+}
+#prompt {
+  margin-right: 0; /* remove the margin-right property */
+  font-size: 18px;
+  color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 22px;
+  margin-right: 150px;
+  position: absolute;
+  bottom: -10px;
+  left: 85px;
+}
+input:focus {
+      outline: none;
+      border: none; /* Optional: to remove the border as well */
+}
+
+.circle-btn:hover {
+  background-color: #ccc;
+}
+
+#speakpng{
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+  margin-top: 11px;
+  margin-left: 5px;
+
+
+}
+.message-container {
+position: absolute;
+height: 300px;
+bottom: 120px; /* adjust the value to position the container correctly */
+left: 45%;
+transform: translateX(-50%);
+width: 600px;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+overflow-y: auto;
+}
+
+.message {
+padding: 10px;
+border-radius: 10px;
+margin-bottom: 10px;
+}
+
+.user-message {
+background-color: #e0e0e0; /* light gray */
+float: right; /* move to the right */
+clear: both; /* clear the float */
+}
+
+.ai-response {
+background-color: #ddf; /* light blue */
+float: left; /* move to the left */
+clear: both; /* clear the float */
+}

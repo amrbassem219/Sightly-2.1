@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="chat_style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chatbox">
+            <label for="image-upload" class="image-upload-btn">
+                <img src="../static/img.png" alt="Upload Image" id="imginbtn">
+                <input type="file" id="image-upload" accept="image/*">
+            </label>
+        <form id="chat-form">
+            <input type="text" placeholder="Ask Sightly anything..." id="prompt">
+            <button type="submit" id="submitbtn">Send</button>
+        </form>
+
+        <div class="messeges">
+            <div class="message-container">
+              <div class="user-response"></div>
+              <div class="ai-response"></div>
+            </div>
+        </div>
+
+        <a href="https://example.com" target="_blank" class="circle-btn">
+            <i class="fas fa-circle"></i>
+            <img src="../static/speak.png" id="speakpng">
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('#chat-form');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+
+                const message = document.querySelector('#prompt').value;
+                const image = document.querySelector('#image-upload').files[0];
+
+                if (message.trim() !== "") {
+                    addMessage('user', message);
+
+                    // Send message to server
+                    fetch('/send_message', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ message: message, image: image })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            console.error('Error from server:', data.error);
+                        } else {
+                            addMessage('bot', data.response);
+                        }
+                    })
+                    .catch(error => console.error('Fetch error:', error));
+                }
+            });
+
+            function addMessage(sender, text) {
+                const messageContainer = document.createElement('div');
+                messageContainer.classList.add('message', sender);
+
+                if (sender === 'bot') {
+                    const icon = document.createElement('i');
+                    icon.classList.add('fa-solid', 'fa-user-doctor', 'icon');
+                    messageContainer.appendChild(icon);
+                    const icon2 = document.createElement('i');
+                    icon2.classList.add('fa-solid', 'fa-microphone', 'icon2');
+                    messageContainer.appendChild(icon2);
+                }
+
+                const messageText = document.createElement('span');
+                messageText.innerText = text;
+                messageContainer.appendChild(messageText);
+
+                document.querySelector('.user-response').appendChild(messageContainer);
+                document.querySelector('.ai-response').scrollTop = document.querySelector('.messeges').scrollHeight;
+            }
+        });
+    </script>
+
+    <!-- <script src=""></script> -->
+
+</body>
+</html>

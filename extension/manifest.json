@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Vezeeta Key Press",
+    "version": "1.0",
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://www.vezeeta.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }

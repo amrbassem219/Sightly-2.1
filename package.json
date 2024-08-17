@@ -1,0 +1,25 @@
+{
+  "name": "simpler",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^5.3.0",
+    "axios": "^1.7.4",
+    "chromedriver": "^127.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "gtts": "^0.2.1",
+    "puppeteer": "^23.1.0",
+    "selenium-webdriver": "^4.23.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

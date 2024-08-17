@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamScanner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cam_style.css">
+</head>
+<body>
+    <div id="topbar">
+        <img src="logo.png">
+    </div>
+
+    <div id="videocont">
+        <h1>Scan Your Document</h1>
+        <video id="video" autoplay style="transform: rotate(90deg);max-width: 100%; height: auto;
+        padding-left: 150px;"></video>
+        <div class="controls">
+        <div id="capture" ></div>
+    </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+
+    <p id="transcription">Transcription will appear here:</p>
+    <script src="cam_script.js"></script>
+</body>
+</html>
